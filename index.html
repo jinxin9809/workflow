@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="renderer" content="webkit"/>
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+  <meta http-equiv="expires" content="0">
+  <title>上海流程平台</title>
+  <link href="favicon.ico" rel="icon" type="image/x-icon">
+  <style>
+    #zh_box *{
+      padding:0;margin:0;list-style: none;
+    }
+    #zh_box {
+      position: relative;
+      width: 1100px;
+      margin-left:auto;
+      margin-right:auto;
+      background-color: transparent;
+      box-sizing: border-box;
+      font-size: 12px;
+      display: none;
+    }
+    #zh_box>div{
+      position:absolute;
+      left:0;
+    }
+    #zh_box>ul{
+      position:absolute;
+      right:80px;
+    }
+    #zh_box>ul>li{
+      padding:4px 5px;
+      font-size:14px;
+      color:#8e8e93;
+    }
+    #zh_box>ul>li>h2{
+      font-size:18px;
+      color:#5e5c5c;
+    }
+    #zh_box img{
+      border:none;
+    }
+    #zh_box ul li span>a{
+      text-decoration: none;
+      font-size:12px;
+      color:#007aff;
+    }
+    #zh_box ul li>span{
+      display: inline-block;
+      width:120px;
+    }
+    #zh_box ul li>span span{
+      display: inline-block;
+      padding-left:6px;
+    }
+    #zh_box ul li>a{
+      color:#8e8e93;
+      font-size:14px;
+      text-decoration: underline;
+    }
+    #zh_box ul li>a:hover{
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+<div id="app" style="position:relative">
+  <h1 id="loads" style="text-align: center;font-size:16px;font-weight:800;padding-top:15px;">页面加载中...</h1>
+  <!--vue control-->
+  <div id="zh_box">
+    <div>
+      <img style="width:100%;"  src="static/ie9-banner.png">
+    </div>
+    <ul>
+      <li><h2>检测到浏览器版本过低</h2></li>
+      <li>上海流程平台不支持低版本浏览器，建议您使用以下浏览器：</li>
+      <li>IE浏览器建议更新至最新版本，或者使用火狐、谷歌浏览器等支持HTML5标准的浏览器</li>
+      <li>如果需要，您可以点击以下链接</li>
+      <li>
+        <span>
+          <a href="http://wsxy.chinaunicom.cn/content/apps/chrome_x32.exe">
+            <img src="static/google.png">
+            <span>32位谷歌下载</span>
+          </a>
+        </span>
+        <span>
+          <a href="http://wsxy.chinaunicom.cn/content/apps/chrome_x64.exe">
+            <img src="static/google.png">
+            <span>64位谷歌下载</span>
+          </a>
+        </span>
+      </li>
+      <li class="zh_box_li3 clearfix">
+        <span>
+          <a href="http://wsxy.chinaunicom.cn/content/apps/Firefox_x32.exe">
+            <img src="static/firefox.png">
+            <span>32位火狐下载</span>
+          </a>
+        </span>
+        <span>
+          <a href="http://wsxy.chinaunicom.cn/content/apps/Firefox_x64.exe">
+            <img src="static/firefox.png">
+            <span>64位火狐下载</span>
+          </a>
+        </span>
+      </li>
+      <li class="zh_box_li2">24小时客服热线电话：18545120920</li>
+      <li class="zh_box_li2">
+        <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2578424718&amp;site=qq&amp;menu=yes" target="_blank">上海流程平台在线客服：18545120920</a>
+      </li>
+    </ul>
+  </div>
+  <spk-root></spk-root>
+</div>
+<script type="text/javascript">
+  window.onload = function () {
+    var heights=document.documentElement.clientHeight;
+  var Zh_box = document.getElementById("zh_box");
+  var load = document.getElementById("loads");
+  if(Zh_box){
+    Zh_box.style.marginTop=(heights/2)-100+"px";
+  }
+  var b = false; // 非360
+  try {
+    external.twGetSecurityID(window);
+    b = true; // SE
+  } catch (e) {
+  }
+  var browserAgent = (navigator.userAgent).toLocaleLowerCase();
+  if (browserAgent.indexOf("chrome") != -1 && browserAgent.indexOf("360ee") != -1) {
+    b = true; // CHROME
+  }
+
+  if (b) {
+    user_agent = navigator.userAgent.toLowerCase();
+    if (user_agent.indexOf("msie 10.0") > -1 && user_agent.indexOf("trident/6.0") > -1) {
+      Zh_box.style.display = "none";
+      load.style.display = "block";
+    } else if (user_agent.indexOf("msie 9.0") > -1 && user_agent.indexOf("trident/6.0") > -1) {
+      Zh_box.style.display = "none";
+      load.style.display = "block";
+    } else if (user_agent.indexOf("msie 8.0") > -1 && user_agent.indexOf("trident/6.0") > -1) {
+      Zh_box.style.display = "none";
+      load.style.display = "block";
+    } else if (user_agent.indexOf("msie 7.0") > -1 && user_agent.indexOf("trident/6.0") > -1) {
+      Zh_box.style.display = "none";
+      load.style.display = "block";
+    } else if (user_agent.indexOf("msie 9.0") > -1) {
+      Zh_box.style.display = "block";
+      load.style.display = "none";
+    } else if (user_agent.indexOf("msie 7.0") > -1 && user_agent.indexOf("trident/5.0") > -1) {
+      Zh_box.style.display = "block";
+      load.style.display = "none";
+    } else if (user_agent.indexOf("msie 8.0") > -1 && user_agent.indexOf("trident/5.0") > -1) {
+      Zh_box.style.display = "block";
+      load.style.display = "none";
+    } else if (user_agent.indexOf("msie 8.0") > -1) {
+      Zh_box.style.display = "block";
+      load.style.display = "none";
+    } else if (user_agent.indexOf("msie 7.0") > -1 && user_agent.indexOf("trident/4.0") > -1) {
+      Zh_box.style.display = "block";
+      load.style.display = "none";
+    } else if (user_agent.indexOf("msie 7.0") > -1) {
+      Zh_box.style.display = "block";
+      load.style.display = "none";
+    } else if (user_agent.indexOf("msie 6.0") > -1) {
+      Zh_box.style.display = "block";
+      load.style.display = "none";
+    }
+  } else {
+    var ins = 'block';
+    user_agent = navigator.userAgent.toLowerCase();
+    if (user_agent.indexOf("msie 10.0") > -1 && user_agent.indexOf("trident/6.0") > -1) {
+      Zh_box.style.display = "none";
+      load.style.display = "block";
+    } else if (user_agent.indexOf("msie 9.0") > -1 && user_agent.indexOf("trident/6.0") > -1) {
+      Zh_box.style.display = "none";
+      load.style.display = "block";
+    } else if (user_agent.indexOf("msie 8.0") > -1 && user_agent.indexOf("trident/6.0") > -1) {
+      Zh_box.style.display = "none";
+      load.style.display = "block";
+    } else if (user_agent.indexOf("msie 7.0") > -1 && user_agent.indexOf("trident/6.0") > -1) {
+      Zh_box.style.display = "none";
+      load.style.display = "block";
+    } else if (user_agent.indexOf("msie 9.0") > -1) {
+      Zh_box.style.display = "block";
+      load.style.display = "none";
+    } else if (user_agent.indexOf("msie 7.0") > -1 && user_agent.indexOf("trident/5.0") > -1) {
+      Zh_box.style.display = "block";
+      load.style.display = "none";
+    } else if (user_agent.indexOf("msie 8.0") > -1 && user_agent.indexOf("trident/5.0") > -1) {
+      Zh_box.style.display = "block";
+      load.style.display = "none";
+    } else if (user_agent.indexOf("msie 8.0") > -1) {
+      Zh_box.style.display = "block";
+      load.style.display = "none";
+    } else if (user_agent.indexOf("msie 7.0") > -1 && user_agent.indexOf("trident/4.0") > -1) {
+      Zh_box.style.display = "block";
+      load.style.display = "none";
+    } else if (user_agent.indexOf("msie 7.0") > -1) {
+      Zh_box.style.display = "block";
+      load.style.display = "none";
+    } else if (user_agent.indexOf("msie 6.0") > -1) {
+      Zh_box.style.display = "block";
+      load.style.display = "none";
+    }
+  }
+}</script>
+<script src="./static/moment.min.js"></script>
+<script src="./static/laydate.js"></script>
+<!-- built files will be auto injected -->
+</body>
+<script>
+  if (sessionStorage.alerts) {
+    document.body.style.overflowY = "auto";
+    document.body.style.overflowX = "hidden";
+    document.body.style.width = "1000px";
+    document.body.style.margin = "0 auto";
+  }
+</script>
+</html>
